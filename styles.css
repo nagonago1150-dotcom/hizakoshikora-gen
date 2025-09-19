@@ -6,31 +6,26 @@
 
 :root {
     --primary-color: #ffffff;
-    --accent-color: #2c2c2c;
-    --accent-light: #4a4a4a;
-    --accent-dark: #1a1a1a;
-    --luxury-gold: #d4af37;
-    --luxury-gold-light: #f4e487;
-    --luxury-gold-dark: #b8941f;
-    --accent-gradient: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #4a4a4a 100%);
-    --premium-gradient: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 25%, #d8d8d8 75%, #2c2c2c 100%);
-    --glass-gradient: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 50%, rgba(212,175,55,0.1) 100%);
-    --luxury-gradient: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(255,255,255,0.9) 50%, rgba(212,175,55,0.15) 100%);
-    --shine-gradient: linear-gradient(45deg, transparent 30%, rgba(212,175,55,0.3) 50%, transparent 70%);
+    --accent-color: #fce0e5;
+    --accent-light: #fff5f7;
+    --accent-dark: #f5b3c0;
+    --accent-gradient: linear-gradient(135deg, #fff0f3 0%, #fce0e5 50%, #f5b3c0 100%);
+    --premium-gradient: linear-gradient(135deg, #fafcff 0%, #f5f9ff 25%, #fff5f8 75%, #fce0e5 100%);
+    --glass-gradient: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 50%, rgba(252,224,229,0.3) 100%);
+    --shine-gradient: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.8) 50%, transparent 70%);
     --text-primary: #2c2c2c;
     --text-secondary: #5a5a5a;
-    --text-luxury: #1a1a1a;
-    --border-color: rgba(212, 175, 55, 0.3);
-    --glass-bg: rgba(255, 255, 255, 0.95);
-    --shadow-light: 0 15px 50px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 25px 80px rgba(0, 0, 0, 0.15);
-    --shadow-luxury: 0 20px 60px rgba(212, 175, 55, 0.2);
-    --backdrop-blur: blur(25px);
+    --border-color: rgba(255, 255, 255, 0.3);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --shadow-light: 0 10px 40px rgba(252, 224, 229, 0.3);
+    --shadow-medium: 0 20px 60px rgba(252, 224, 229, 0.4);
+    --shadow-glow: 0 0 80px rgba(252, 224, 229, 0.6);
+    --backdrop-blur: blur(20px);
 }
 
 body {
     font-family: 'Noto Sans JP', 'Cormorant Garamond', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 50%, #f0f0f0 100%);
+    background: #fafcff;
     color: var(--text-primary);
     line-height: 1.8;
     overflow-x: hidden;
@@ -60,13 +55,13 @@ body::before {
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(ellipse at top left, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-        radial-gradient(ellipse at top right, rgba(255, 255, 255, 0.3) 0%, transparent 40%),
-        radial-gradient(ellipse at bottom left, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(244, 228, 135, 0.1) 0%, transparent 40%);
-    opacity: 0.9;
+        radial-gradient(ellipse at top left, rgba(252, 224, 229, 0.4) 0%, transparent 40%),
+        radial-gradient(ellipse at top right, rgba(230, 240, 255, 0.4) 0%, transparent 40%),
+        radial-gradient(ellipse at bottom left, rgba(255, 240, 245, 0.3) 0%, transparent 40%),
+        radial-gradient(ellipse at bottom right, rgba(240, 248, 255, 0.3) 0%, transparent 40%);
+    opacity: 0.8;
     z-index: 0;
-    animation: watercolor 25s ease-in-out infinite;
+    animation: watercolor 20s ease-in-out infinite;
 }
 
 @keyframes watercolor {
@@ -109,52 +104,44 @@ body::after {
 /* カスタムカーソル */
 .cursor {
     position: absolute;
-    width: 16px;
-    height: 16px;
-    border: 2px solid var(--luxury-gold);
-    background: rgba(212, 175, 55, 0.15);
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-dark);
+    background: rgba(252, 224, 229, 0.2);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
     box-shadow:
-        0 0 25px rgba(212, 175, 55, 0.4),
-        inset 0 0 15px rgba(255, 255, 255, 0.6),
-        0 0 40px rgba(212, 175, 55, 0.2);
-    transition: opacity 0.4s ease, border-color 0.4s ease, background-color 0.4s ease, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        0 0 20px rgba(252, 224, 229, 0.6),
+        inset 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: opacity 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
     will-change: left, top;
-    backdrop-filter: blur(10px);
 }
 
 .cursor-follower {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 70%);
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, rgba(252, 224, 229, 0.4) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9998;
     transform: translate(-50%, -50%);
-    filter: blur(8px);
-    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: blur(4px);
+    transition: opacity 0.3s ease;
     will-change: left, top;
-    backdrop-filter: blur(5px);
 }
 
 .cursor.cursor-hover {
-    border-color: var(--luxury-gold-light);
-    background: rgba(212, 175, 55, 0.25);
-    transform: translate(-50%, -50%) scale(1.8);
-    box-shadow:
-        0 0 35px rgba(212, 175, 55, 0.6),
-        inset 0 0 20px rgba(255, 255, 255, 0.8),
-        0 0 60px rgba(212, 175, 55, 0.3);
+    border-color: var(--accent-color);
+    background: rgba(252, 224, 229, 0.4);
+    transform: translate(-50%, -50%) scale(1.5);
 }
 
 .cursor-follower.cursor-hover {
-    transform: translate(-50%, -50%) scale(1.4);
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, rgba(255, 255, 255, 0.15) 40%, transparent 70%);
-    filter: blur(12px);
+    transform: translate(-50%, -50%) scale(1.2);
+    background: radial-gradient(circle, rgba(252, 224, 229, 0.6) 0%, transparent 70%);
 }
 
 #app {
@@ -212,7 +199,7 @@ body::after {
     font-family: 'Cormorant Garamond', serif;
     line-height: 1;
     z-index: 1;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.4));
+    background: linear-gradient(135deg, rgba(252, 224, 229, 0.2), rgba(252, 224, 229, 0.4));
     -webkit-background-clip: text;
     background-clip: text;
     animation: numberGlow 3s ease-in-out infinite;
@@ -220,10 +207,10 @@ body::after {
 
 @keyframes numberGlow {
     0%, 100% {
-        filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+        filter: drop-shadow(0 0 20px rgba(252, 224, 229, 0.5));
     }
     50% {
-        filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.8));
+        filter: drop-shadow(0 0 40px rgba(252, 224, 229, 0.8));
     }
 }
 
@@ -242,7 +229,7 @@ body::after {
         0 30px 80px rgba(0, 0, 0, 0.08),
         0 0 0 1px rgba(255, 255, 255, 0.9),
         inset 0 0 30px rgba(255, 255, 255, 0.5),
-        0 0 120px rgba(212, 175, 55, 0.4);
+        0 0 120px rgba(252, 224, 229, 0.4);
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     animation: floatImage 8s ease-in-out infinite;
     position: relative;
@@ -287,7 +274,7 @@ body::after {
     box-shadow: 
         0 40px 100px rgba(0, 0, 0, 0.1),
         0 0 0 1px rgba(255, 255, 255, 1),
-        0 0 150px rgba(212, 175, 55, 0.6);
+        0 0 150px rgba(252, 224, 229, 0.6);
 }
 
 .main-copy-container {
@@ -316,7 +303,7 @@ body::after {
     animation: fadeInRight 0.8s ease-out 0.6s forwards;
     color: var(--text-primary);
     text-shadow: 
-        0 4px 16px rgba(212, 175, 55, 0.6),
+        0 4px 16px rgba(252, 224, 229, 0.6),
         0 2px 8px rgba(0, 0, 0, 0.08);
     position: relative;
     line-height: 1.2;
@@ -493,13 +480,13 @@ body::after {
 .progress-track {
     width: 100%;
     height: 8px;
-    background: linear-gradient(90deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.2));
+    background: linear-gradient(90deg, rgba(252, 224, 229, 0.1), rgba(252, 224, 229, 0.2));
     border-radius: 100px;
     overflow: hidden;
     position: relative;
     box-shadow: 
         inset 0 2px 4px rgba(0, 0, 0, 0.05),
-        0 0 20px rgba(212, 175, 55, 0.2);
+        0 0 20px rgba(252, 224, 229, 0.2);
 }
 
 .progress-fill {
@@ -543,16 +530,16 @@ body::after {
 }
 
 .question-area {
-    background: var(--luxury-gradient);
+    background: var(--glass-gradient);
     backdrop-filter: var(--backdrop-blur);
-    padding: 60px;
-    border-radius: 30px;
+    padding: 50px;
+    border-radius: 40px;
     box-shadow:
-        var(--shadow-luxury),
-        inset 0 0 0 2px var(--luxury-gold),
-        inset 0 0 100px rgba(255, 255, 255, 0.6),
-        0 0 50px rgba(212, 175, 55, 0.3);
-    border: 1px solid var(--luxury-gold);
+        0 20px 60px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9),
+        inset 0 0 80px rgba(255, 255, 255, 0.5),
+        0 0 100px rgba(252, 224, 229, 0.3);
+    border: 1px solid var(--border-color);
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.4s forwards;
     position: relative;
@@ -578,22 +565,17 @@ body::after {
 }
 
 .question-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(24px, 3.5vw, 32px);
-    font-weight: 500;
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 2.8vw, 26px);
+    font-weight: 300;
     text-align: center;
-    margin-bottom: 50px;
-    color: var(--text-luxury);
-    letter-spacing: 0.05em;
-    line-height: 1.4;
+    margin-bottom: 40px;
+    color: var(--text-primary);
+    letter-spacing: 0.08em;
+    line-height: 1.6;
     position: relative;
     z-index: 1;
     white-space: nowrap;
-    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, var(--luxury-gold-dark) 0%, var(--luxury-gold) 50%, var(--luxury-gold-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .options {
@@ -605,28 +587,28 @@ body::after {
 }
 
 .option-button {
-    background: var(--luxury-gradient);
+    background: var(--glass-gradient);
     backdrop-filter: var(--backdrop-blur);
-    border: 2px solid var(--luxury-gold);
-    border-radius: 25px;
-    padding: 25px 45px;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: 'Cormorant Garamond', serif;
-    color: var(--text-luxury);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 60px;
+    padding: 20px 40px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-primary);
     cursor: none;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     text-align: center;
     position: relative;
     overflow: hidden;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em;
     opacity: 0;
     animation: fadeInUp 0.6s ease-out forwards;
     box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.04),
         inset 0 0 0 1px rgba(255, 255, 255, 0.9),
         inset 0 0 40px rgba(255, 255, 255, 0.3),
-        0 0 60px rgba(212, 175, 55, 0.2);
+        0 0 60px rgba(252, 224, 229, 0.2);
 }
 
 .option-button::before {
@@ -657,15 +639,14 @@ body::after {
 }
 
 .option-button:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     box-shadow:
-        var(--shadow-luxury),
-        inset 0 0 0 2px var(--luxury-gold),
-        inset 0 0 80px rgba(255, 255, 255, 0.5),
-        0 0 100px rgba(212, 175, 55, 0.4);
-    border-color: var(--luxury-gold-light);
-    background: linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(255,255,255,0.95) 50%, rgba(212,175,55,0.2) 100%);
-    color: var(--text-luxury);
+        0 12px 40px rgba(0, 0, 0, 0.08),
+        inset 0 0 0 1px rgba(255, 255, 255, 1),
+        inset 0 0 60px rgba(252, 224, 229, 0.3),
+        0 0 80px rgba(252, 224, 229, 0.4);
+    border-color: rgba(252, 224, 229, 0.5);
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 50%, rgba(252,224,229,0.4) 100%);
 }
 
 .option-button:active {
@@ -719,7 +700,7 @@ body::after {
     position: relative;
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+    filter: drop-shadow(0 0 20px rgba(252, 224, 229, 0.5));
 }
 
 .ripple {
@@ -820,17 +801,15 @@ body::after {
 
 .particle {
     position: absolute;
-    width: 3px;
-    height: 3px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(212, 175, 55, 0.4) 70%, transparent 100%);
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(252, 224, 229, 0.6) 100%);
     border-radius: 50%;
     opacity: 0;
     animation: float linear infinite;
     box-shadow:
-        0 0 15px rgba(255, 255, 255, 0.6),
-        0 0 30px rgba(212, 175, 55, 0.3),
-        0 0 40px rgba(212, 175, 55, 0.1);
-    backdrop-filter: blur(2px);
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(252, 224, 229, 0.6);
 }
 
 @keyframes float {
