@@ -6,26 +6,31 @@
 
 :root {
     --primary-color: #ffffff;
-    --accent-color: #fce0e5;
-    --accent-light: #fff5f7;
-    --accent-dark: #f5b3c0;
-    --accent-gradient: linear-gradient(135deg, #fff0f3 0%, #fce0e5 50%, #f5b3c0 100%);
-    --premium-gradient: linear-gradient(135deg, #fafcff 0%, #f5f9ff 25%, #fff5f8 75%, #fce0e5 100%);
-    --glass-gradient: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 50%, rgba(252,224,229,0.3) 100%);
-    --shine-gradient: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.8) 50%, transparent 70%);
+    --accent-color: #2c2c2c;
+    --accent-light: #4a4a4a;
+    --accent-dark: #1a1a1a;
+    --luxury-gold: #d4af37;
+    --luxury-gold-light: #f4e487;
+    --luxury-gold-dark: #b8941f;
+    --accent-gradient: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #4a4a4a 100%);
+    --premium-gradient: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 25%, #d8d8d8 75%, #2c2c2c 100%);
+    --glass-gradient: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 50%, rgba(212,175,55,0.1) 100%);
+    --luxury-gradient: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(255,255,255,0.9) 50%, rgba(212,175,55,0.15) 100%);
+    --shine-gradient: linear-gradient(45deg, transparent 30%, rgba(212,175,55,0.3) 50%, transparent 70%);
     --text-primary: #2c2c2c;
     --text-secondary: #5a5a5a;
-    --border-color: rgba(255, 255, 255, 0.3);
-    --glass-bg: rgba(255, 255, 255, 0.85);
-    --shadow-light: 0 10px 40px rgba(252, 224, 229, 0.3);
-    --shadow-medium: 0 20px 60px rgba(252, 224, 229, 0.4);
-    --shadow-glow: 0 0 80px rgba(252, 224, 229, 0.6);
-    --backdrop-blur: blur(20px);
+    --text-luxury: #1a1a1a;
+    --border-color: rgba(212, 175, 55, 0.3);
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --shadow-light: 0 15px 50px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 25px 80px rgba(0, 0, 0, 0.15);
+    --shadow-luxury: 0 20px 60px rgba(212, 175, 55, 0.2);
+    --backdrop-blur: blur(25px);
 }
 
 body {
     font-family: 'Noto Sans JP', 'Cormorant Garamond', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #fafcff;
+    background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 50%, #f0f0f0 100%);
     color: var(--text-primary);
     line-height: 1.8;
     overflow-x: hidden;
@@ -55,13 +60,13 @@ body::before {
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(ellipse at top left, rgba(220, 20, 60, 0.2) 0%, transparent 40%),
-        radial-gradient(ellipse at top right, rgba(255, 99, 71, 0.2) 0%, transparent 40%),
-        radial-gradient(ellipse at bottom left, rgba(255, 165, 0, 0.15) 0%, transparent 40%),
-        radial-gradient(ellipse at bottom right, rgba(255, 215, 0, 0.15) 0%, transparent 40%);
-    opacity: 0.8;
+        radial-gradient(ellipse at top left, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at top right, rgba(255, 255, 255, 0.3) 0%, transparent 40%),
+        radial-gradient(ellipse at bottom left, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(244, 228, 135, 0.1) 0%, transparent 40%);
+    opacity: 0.9;
     z-index: 0;
-    animation: watercolor 20s ease-in-out infinite;
+    animation: watercolor 25s ease-in-out infinite;
 }
 
 @keyframes watercolor {
@@ -530,16 +535,16 @@ body::after {
 }
 
 .question-area {
-    background: var(--glass-gradient);
+    background: var(--luxury-gradient);
     backdrop-filter: var(--backdrop-blur);
-    padding: 50px;
-    border-radius: 40px;
-    box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.05),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.9),
-        inset 0 0 80px rgba(255, 255, 255, 0.5),
-        0 0 100px rgba(220, 20, 60, 0.3);
-    border: 2px solid var(--accent-color);
+    padding: 60px;
+    border-radius: 30px;
+    box-shadow:
+        var(--shadow-luxury),
+        inset 0 0 0 2px var(--luxury-gold),
+        inset 0 0 100px rgba(255, 255, 255, 0.6),
+        0 0 50px rgba(212, 175, 55, 0.3);
+    border: 1px solid var(--luxury-gold);
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.4s forwards;
     position: relative;
@@ -565,19 +570,19 @@ body::after {
 }
 
 .question-title {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: clamp(22px, 3.2vw, 30px);
-    font-weight: 600;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 3.5vw, 32px);
+    font-weight: 500;
     text-align: center;
-    margin-bottom: 40px;
-    color: #333;
-    letter-spacing: 0.02em;
-    line-height: 1.5;
+    margin-bottom: 50px;
+    color: var(--text-luxury);
+    letter-spacing: 0.05em;
+    line-height: 1.4;
     position: relative;
     z-index: 1;
     white-space: nowrap;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, var(--luxury-gold-dark) 0%, var(--luxury-gold) 50%, var(--luxury-gold-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -592,21 +597,21 @@ body::after {
 }
 
 .option-button {
-    background: var(--glass-gradient);
+    background: var(--luxury-gradient);
     backdrop-filter: var(--backdrop-blur);
-    border: 2px solid var(--accent-color);
-    border-radius: 60px;
-    padding: 20px 40px;
-    font-size: 15px;
-    font-weight: 600;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: var(--text-primary);
+    border: 2px solid var(--luxury-gold);
+    border-radius: 25px;
+    padding: 25px 45px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text-luxury);
     cursor: none;
-    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     text-align: center;
     position: relative;
     overflow: hidden;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
     opacity: 0;
     animation: fadeInUp 0.6s ease-out forwards;
     box-shadow: 
@@ -644,14 +649,15 @@ body::after {
 }
 
 .option-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 
-        0 12px 40px rgba(0, 0, 0, 0.08),
-        inset 0 0 0 1px rgba(255, 255, 255, 1),
-        inset 0 0 60px rgba(252, 224, 229, 0.3),
-        0 0 80px rgba(252, 224, 229, 0.4);
-    border-color: rgba(252, 224, 229, 0.5);
-    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 50%, rgba(252,224,229,0.4) 100%);
+    transform: translateY(-5px);
+    box-shadow:
+        var(--shadow-luxury),
+        inset 0 0 0 2px var(--luxury-gold),
+        inset 0 0 80px rgba(255, 255, 255, 0.5),
+        0 0 100px rgba(212, 175, 55, 0.4);
+    border-color: var(--luxury-gold-light);
+    background: linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(255,255,255,0.95) 50%, rgba(212,175,55,0.2) 100%);
+    color: var(--text-luxury);
 }
 
 .option-button:active {
