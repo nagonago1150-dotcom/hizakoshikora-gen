@@ -331,33 +331,41 @@ function createParticles() {
 const style = document.createElement('style');
 style.textContent = `
     .selected {
-        animation: selectedPulse 0.8s ease-out;
+        animation: selectedLuxuryPulse 1s ease-out;
     }
-    
-    @keyframes selectedPulse {
+
+    @keyframes selectedLuxuryPulse {
         0% {
-            box-shadow: 0 0 0 0 rgba(245, 179, 192, 0.8);
+            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6);
         }
-        70% {
-            box-shadow: 0 0 0 30px rgba(245, 179, 192, 0);
+        50% {
+            box-shadow: 0 0 0 25px rgba(212, 175, 55, 0.2);
         }
         100% {
-            box-shadow: 0 0 0 0 rgba(245, 179, 192, 0);
+            box-shadow: 0 0 0 40px rgba(212, 175, 55, 0);
         }
     }
-    
+
     .ripple-effect {
         position: absolute;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.6) 0%, rgba(255, 255, 255, 0.4) 40%, transparent 70%);
         transform: scale(0);
-        animation: rippleSpread 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        animation: luxuryRippleSpread 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         pointer-events: none;
+        backdrop-filter: blur(3px);
     }
-    
-    @keyframes rippleSpread {
-        to {
-            transform: scale(5);
+
+    @keyframes luxuryRippleSpread {
+        0% {
+            transform: scale(0);
+            opacity: 0.8;
+        }
+        50% {
+            opacity: 0.4;
+        }
+        100% {
+            transform: scale(6);
             opacity: 0;
         }
     }
