@@ -1058,10 +1058,15 @@ body::after {
         transform: scale(1);
         letter-spacing: 0.02em;
     }
-    
+
     #section2 .question-title {
         white-space: normal;
         transform: scale(1);
+    }
+
+    #section2 .question-title .q2-line1,
+    #section2 .question-title .q2-line2 {
+        display: block;
     }
     
     .question-area {
