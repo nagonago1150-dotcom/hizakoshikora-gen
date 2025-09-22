@@ -351,6 +351,18 @@ body::after {
     margin-top: 20px;
 }
 
+.copy-line1-mobile-break {
+    display: block;
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    animation: fadeInLeft 0.8s ease-out 0.9s forwards;
+    position: relative;
+    color: var(--text-secondary);
+    margin-top: 20px;
+}
+
 .copy-line3 {
     display: block;
     font-size: clamp(20px, 3vw, 26px);
@@ -896,6 +908,17 @@ body::after {
     }
 }
 
+/* デスクトップ・タブレット向けスタイル */
+@media (min-width: 769px) {
+    .copy-line2 {
+        display: block;
+    }
+
+    .copy-line1-mobile-break {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     .section {
         padding: 30px 0 50px 0;
@@ -934,6 +957,10 @@ body::after {
     }
 
     .copy-line2 {
+        display: none;
+    }
+
+    .copy-line1-mobile-break {
         font-size: 20px;
         margin-top: 16px;
     }
@@ -1109,7 +1136,12 @@ body::after {
     }
 
     .copy-line2 {
+        display: none;
+    }
+
+    .copy-line1-mobile-break {
         font-size: clamp(18px, 2.8vw, 24px);
+        margin-top: 16px;
     }
 
     .copy-line3 {
