@@ -1033,6 +1033,7 @@ body::after {
     
     .leading-text {
         font-size: 18px;
+        white-space: nowrap;
     }
     
     .loading-text {
@@ -1110,6 +1111,7 @@ body::after {
     
     .leading-text {
         font-size: 17px;
+        white-space: nowrap;
     }
 }
 
