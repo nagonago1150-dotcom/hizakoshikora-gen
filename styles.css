@@ -1049,6 +1049,7 @@ body::after {
         font-size: 24px;
         letter-spacing: 0.08em;
         padding: 0 10px;
+        margin-left: 1em;
         white-space: nowrap;
     }
     
@@ -1099,6 +1100,7 @@ body::after {
     .thank-you {
         font-size: 22px;
         padding: 0 15px;
+        margin-left: 1em;
         white-space: nowrap;
     }
     
@@ -1125,6 +1127,7 @@ body::after {
         font-size: 18px;
         letter-spacing: 0.02em;
         padding: 0 15px;
+        margin-left: 1em;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -1150,6 +1153,7 @@ body::after {
         font-size: 16px;
         letter-spacing: 0.01em;
         padding: 0 10px;
+        margin-left: 1em;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
