@@ -754,6 +754,16 @@ body::after {
     margin-right: auto;
 }
 
+.leading-line1, .leading-line2 {
+    display: block;
+}
+
+@media (min-width: 481px) {
+    .leading-line1, .leading-line2 {
+        display: inline;
+    }
+}
+
 .loading-animation {
     margin: 80px auto;
     position: relative;
